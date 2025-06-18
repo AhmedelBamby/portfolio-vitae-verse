@@ -4,6 +4,18 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 
 const Contact = () => {
+  const handleEmailClick = () => {
+    window.location.href = 'mailto:ahmedelbamby1102003@gmail.com';
+  };
+
+  const handleGithubClick = () => {
+    window.open('https://github.com/AhmedelBamby', '_blank');
+  };
+
+  const handleLinkedInClick = () => {
+    window.open('https://www.linkedin.com/in/ahmedelbamby/', '_blank');
+  };
+
   return (
     <section className="py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white">
       <div className="container mx-auto px-6">
@@ -30,8 +42,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-white">Email</h4>
-                    <a href="mailto:ahmedhanyelBamby@gmail.com" className="text-blue-400 hover:text-blue-300 transition-colors">
-                      ahmedhanyelBamby@gmail.com
+                    <a href="mailto:ahmedelbamby1102003@gmail.com" className="text-blue-400 hover:text-blue-300 transition-colors">
+                      ahmedelbamby1102003@gmail.com
                     </a>
                   </div>
                 </div>
@@ -64,7 +76,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-white">LinkedIn</h4>
-                    <a href="https://linkedin.com/in/ahmedelbamby" className="text-pink-400 hover:text-pink-300 transition-colors">
+                    <a href="https://www.linkedin.com/in/ahmedelbamby/" target="_blank" rel="noopener noreferrer" className="text-pink-400 hover:text-pink-300 transition-colors">
                       /ahmedelbamby
                     </a>
                   </div>
@@ -73,15 +85,30 @@ const Contact = () => {
               
               <div className="text-center pt-6 border-t border-gray-700">
                 <div className="flex justify-center space-x-4">
-                  <Button variant="outline" size="lg" className="bg-transparent border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white transition-all duration-300">
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="bg-transparent border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white transition-all duration-300"
+                    onClick={handleEmailClick}
+                  >
                     <Mail className="mr-2" size={18} />
                     Send Email
                   </Button>
-                  <Button variant="outline" size="lg" className="bg-transparent border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white transition-all duration-300">
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="bg-transparent border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white transition-all duration-300"
+                    onClick={handleGithubClick}
+                  >
                     <Github className="mr-2" size={18} />
                     View GitHub
                   </Button>
-                  <Button variant="outline" size="lg" className="bg-transparent border-pink-400 text-pink-400 hover:bg-pink-400 hover:text-white transition-all duration-300">
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="bg-transparent border-pink-400 text-pink-400 hover:bg-pink-400 hover:text-white transition-all duration-300"
+                    onClick={handleLinkedInClick}
+                  >
                     <Linkedin className="mr-2" size={18} />
                     Connect
                   </Button>

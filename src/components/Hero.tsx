@@ -1,8 +1,19 @@
-
 import { ChevronDown, Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
+  const handleContactClick = () => {
+    window.location.href = 'mailto:ahmedelbamby1102003@gmail.com';
+  };
+
+  const handleGithubClick = () => {
+    window.open('https://github.com/AhmedelBamby', '_blank');
+  };
+
+  const handleLinkedInClick = () => {
+    window.open('https://www.linkedin.com/in/ahmedelbamby/', '_blank');
+  };
+
   return (
     <section className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white flex items-center justify-center relative overflow-hidden">
       {/* Animated background elements */}
@@ -39,15 +50,30 @@ const Hero = () => {
         </div>
         
         <div className="flex justify-center gap-4 mb-12 animate-fade-in">
-          <Button variant="outline" size="lg" className="bg-transparent border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white transition-all duration-300">
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="bg-transparent border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white transition-all duration-300"
+            onClick={handleContactClick}
+          >
             <Mail className="mr-2" size={18} />
             Contact Me
           </Button>
-          <Button variant="outline" size="lg" className="bg-transparent border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white transition-all duration-300">
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="bg-transparent border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white transition-all duration-300"
+            onClick={handleGithubClick}
+          >
             <Github className="mr-2" size={18} />
             GitHub
           </Button>
-          <Button variant="outline" size="lg" className="bg-transparent border-pink-400 text-pink-400 hover:bg-pink-400 hover:text-white transition-all duration-300">
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="bg-transparent border-pink-400 text-pink-400 hover:bg-pink-400 hover:text-white transition-all duration-300"
+            onClick={handleLinkedInClick}
+          >
             <Linkedin className="mr-2" size={18} />
             LinkedIn
           </Button>
