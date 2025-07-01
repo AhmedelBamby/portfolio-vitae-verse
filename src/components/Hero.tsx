@@ -1,4 +1,3 @@
-
 import { ChevronDown, Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -26,8 +25,12 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 sm:px-6 text-center relative z-10 py-8">
         <div className="mb-6 sm:mb-8 animate-fade-in">
-          <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mx-auto mb-4 sm:mb-6 flex items-center justify-center text-2xl sm:text-4xl font-bold shadow-2xl">
-            AE
+          <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4 sm:mb-6 rounded-full overflow-hidden shadow-2xl ring-4 ring-purple-400/50">
+            <img 
+              src="/lovable-uploads/712eda44-1133-449e-be3b-d0a7018e43ed.png" 
+              alt="Ahmed ElBamby"
+              className="w-full h-full object-cover"
+            />
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent leading-tight">
             Ahmed ElBamby
