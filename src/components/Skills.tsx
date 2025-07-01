@@ -36,26 +36,26 @@ const Skills = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Skills & Expertise</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+    <section className="py-12 sm:py-20 bg-white safe-area-padding">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Skills & Expertise</h2>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
             Technical and soft skills developed through academic studies and hands-on experience
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid lg:grid-cols-3 gap-8 sm:gap-12">
           {skillCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="space-y-6">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
+            <div key={categoryIndex} className="space-y-4 sm:space-y-6">
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 sm:mb-6 text-center">
                 {category.title}
               </h3>
               {category.skills.map((skill, skillIndex) => (
                 <div key={skillIndex} className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-700 font-medium">{skill.name}</span>
-                    <span className="text-gray-500 text-sm">{skill.level}%</span>
+                    <span className="text-gray-700 font-medium text-sm sm:text-base">{skill.name}</span>
+                    <span className="text-gray-500 text-xs sm:text-sm">{skill.level}%</span>
                   </div>
                   <Progress value={skill.level} className="h-2" />
                 </div>

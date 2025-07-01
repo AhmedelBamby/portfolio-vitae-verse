@@ -35,26 +35,28 @@ const Experience = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-900 text-white">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16">
+    <section className="py-12 sm:py-20 bg-gray-900 text-white safe-area-padding">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid lg:grid-cols-2 gap-12 sm:gap-16">
           {/* Experience */}
           <div>
-            <h2 className="text-4xl font-bold mb-12 text-center lg:text-left">Professional Experience</h2>
-            <div className="space-y-8">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center lg:text-left">Professional Experience</h2>
+            <div className="space-y-6 sm:space-y-8">
               {experiences.map((exp, index) => (
-                <div key={index} className="relative pl-8 border-l-2 border-gray-600">
-                  <div className={`absolute -left-3 top-0 w-6 h-6 ${exp.color} rounded-full flex items-center justify-center shadow-lg`}>
-                    <Building size={12} className="text-white" />
+                <div key={index} className="relative pl-6 sm:pl-8 border-l-2 border-gray-600">
+                  <div className={`absolute -left-2 sm:-left-3 top-0 w-4 h-4 sm:w-6 sm:h-6 ${exp.color} rounded-full flex items-center justify-center shadow-lg`}>
+                    <Building size={8} className="sm:hidden text-white" />
+                    <Building size={12} className="hidden sm:block text-white" />
                   </div>
-                  <div className="bg-gray-800 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
-                    <h3 className="text-xl font-semibold text-purple-400 mb-2">{exp.position}</h3>
-                    <h4 className="text-lg text-gray-300 mb-2">{exp.company}</h4>
-                    <div className="flex items-center text-gray-400 mb-3">
-                      <Calendar size={16} className="mr-2" />
+                  <div className="bg-gray-800 p-4 sm:p-6 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                    <h3 className="text-lg sm:text-xl font-semibold text-purple-400 mb-2">{exp.position}</h3>
+                    <h4 className="text-base sm:text-lg text-gray-300 mb-2">{exp.company}</h4>
+                    <div className="flex items-center text-gray-400 mb-3 text-sm sm:text-base">
+                      <Calendar size={14} className="mr-2 sm:hidden" />
+                      <Calendar size={16} className="mr-2 hidden sm:block" />
                       <span>{exp.period}</span>
                     </div>
-                    <p className="text-gray-300 leading-relaxed">{exp.description}</p>
+                    <p className="text-gray-300 leading-relaxed text-sm sm:text-base">{exp.description}</p>
                   </div>
                 </div>
               ))}
@@ -63,18 +65,19 @@ const Experience = () => {
           
           {/* Education */}
           <div>
-            <h2 className="text-4xl font-bold mb-12 text-center lg:text-left">Education</h2>
-            <div className="space-y-8">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center lg:text-left">Education</h2>
+            <div className="space-y-6 sm:space-y-8">
               {education.map((edu, index) => (
-                <div key={index} className="bg-gray-800 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
-                  <h3 className="text-xl font-semibold text-blue-400 mb-2">{edu.degree}</h3>
-                  <h4 className="text-lg text-gray-300 mb-2">{edu.institution}</h4>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center text-gray-400">
-                      <Calendar size={16} className="mr-2" />
+                <div key={index} className="bg-gray-800 p-4 sm:p-6 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                  <h3 className="text-lg sm:text-xl font-semibold text-blue-400 mb-2 leading-tight">{edu.degree}</h3>
+                  <h4 className="text-base sm:text-lg text-gray-300 mb-3 leading-tight">{edu.institution}</h4>
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                    <div className="flex items-center text-gray-400 text-sm sm:text-base">
+                      <Calendar size={14} className="mr-2 sm:hidden" />
+                      <Calendar size={16} className="mr-2 hidden sm:block" />
                       <span>{edu.period}</span>
                     </div>
-                    <span className={`px-3 py-1 rounded-full text-sm ${
+                    <span className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm w-fit ${
                       edu.status === 'In Progress' 
                         ? 'bg-green-500/20 text-green-400' 
                         : 'bg-blue-500/20 text-blue-400'

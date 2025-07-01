@@ -34,38 +34,38 @@ const Achievements = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Achievements & Recognition</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+    <section className="py-12 sm:py-20 bg-gradient-to-br from-slate-50 to-blue-50 safe-area-padding">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Achievements & Recognition</h2>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
             Awards, certifications, and notable accomplishments that demonstrate excellence
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {achievements.map((achievement, index) => (
             <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-0 bg-white">
-              <CardHeader className="text-center pb-4">
-                <div className={`w-20 h-20 ${achievement.bgColor} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <achievement.icon className={`${achievement.color}`} size={40} />
+              <CardHeader className="text-center pb-3 sm:pb-4 p-4 sm:p-6">
+                <div className={`w-16 h-16 sm:w-20 sm:h-20 ${achievement.bgColor} rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <achievement.icon className={`${achievement.color}`} size={32} />
                 </div>
-                <CardTitle className="text-xl text-gray-900">{achievement.title}</CardTitle>
+                <CardTitle className="text-lg sm:text-xl text-gray-900 leading-tight">{achievement.title}</CardTitle>
               </CardHeader>
-              <CardContent className="text-center">
-                <p className="text-gray-600 leading-relaxed">{achievement.description}</p>
+              <CardContent className="text-center p-4 sm:p-6 pt-0">
+                <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{achievement.description}</p>
               </CardContent>
             </Card>
           ))}
         </div>
         
-        <div className="bg-white rounded-2xl p-8 shadow-xl">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-6 text-center">Certifications</h3>
-          <div className="grid md:grid-cols-3 gap-4">
+        <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-xl">
+          <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 sm:mb-6 text-center">Certifications</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {certifications.map((cert, index) => (
-              <div key={index} className="flex items-center justify-center p-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg text-white font-medium shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <Award className="mr-2" size={20} />
-                {cert}
+              <div key={index} className="flex items-center justify-center p-3 sm:p-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg text-white font-medium shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+                <Award className="mr-2 flex-shrink-0" size={16} />
+                <span className="text-xs sm:text-sm">{cert}</span>
               </div>
             ))}
           </div>
